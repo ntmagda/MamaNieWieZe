@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+{% load django_markdown %}
+<head>
+	{% load staticfiles %}
+	<title>Galleria</title>
+	<meta charset="utf-8">
+	<meta name="author" content="ntmagda">
+	<link rel="stylesheet" type="text/css" href="{% static 'css_templates/css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css_templates/css/main.css' %}">
+</head>
+<body>
+
+<section class="main gallery">
+    <div id="content">
+    <ul id="picturelist">
+      <li>a tree<a href="#"><img src="{% static 'css_templates/img/climb5.png' %}" alt="a tree"/></a></li>
+      <li>the sea<a href="#"><img src="{% static 'css_templates/img/climb5.png' %}" alt="the sea"/></a></li>
+      <li>the forest<a href="#"><img src="{% static 'css_templates/img/climb5.png' %}" alt="the forest"/></a></li>
+      <li>a bunch of orange flowers<a href="#"><img src="{% static 'css_templates/img/climb5.png' %}" alt="a bunch of orange flowers"/></a></li>
+      <li>a turtle in the sea<a href="#"><img src="{% static 'css_templates/img/climb5.png' %}" alt="a turtle in the sea"/></a></li>
+      <li>a garden/jungle thing<a href="#"><img src="{% static 'css_templates/img/climb5.png' %}" alt="a garden/jungle thing"/></a></li>
+      <li>an oryx antelope in the desert<a href="#"><img src="{% static 'css_templates/img/climb5.png' %}" alt="an oryx antelope in the desert"/></a></li>
+      <li>mesas in the desert<a href="#"><img src="{% static 'css_templates/img/climb5.png' %}" alt="mesas in the desert"/></a></li>
+    </ul>
+  </div>
+</section><!-- Content End -->
+
+
+
+
+</body>
+</html>

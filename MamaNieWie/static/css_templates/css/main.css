@@ -23,8 +23,11 @@
 
 }
 
+
+
 /*  Header  */
 header{
+    background-size:cover
 	width: 100%;
 	height: 300px;
 }
@@ -32,15 +35,17 @@ header{
 header img.h_logo{
 	display: block;
 	float: left;
-	margin: 0 0 10px 10px;
 }
 
-header img.mountain{
-	display: block;
-}
 
 header nav{
 	float: left;
+}
+
+/* resize images */
+.logo img {
+    height: 300px;
+
 }
 
 .logo {
@@ -54,6 +59,7 @@ header nav{
     height: 300px;
 
 }
+
 
 ul.main_nav{	
 	font-family: 'LatoBold', 'Helvetica', arial;
@@ -83,7 +89,7 @@ ul.main_nav li a{
 
 ul.main_nav li:first-child a{
 	text-color: #005ce6
-	border-left: 1px #1e1e1e solid; 
+	border-left: 1px #1e1e1e solid;
 }
 
 ul.main_nav li.current a{
