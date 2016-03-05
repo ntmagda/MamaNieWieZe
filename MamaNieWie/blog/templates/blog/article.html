@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load django_markdown %}
+<head>
+	{% load staticfiles %}
+	<title>entry.title</title>
+	<meta charset="utf-8">
+	<!--<meta name="author" content="ntmagda">-->
+	<!--<link rel="stylesheet" type="text/css" href="{% static 'css_templates/css/reset.css' %}">-->
+	<!--<link rel="stylesheet" type="text/css" href="{% static 'css_templates/css/main.css' %}">-->
+</head>
+<body>
+        <article>
+            <div class="article_image">
+                <a href="">
+                    <img src="{% static entry.title_image %}" alt="" title="">
+                </a>
+            </div>
+            <div class="post">
+                <h1 class="title">
+                    {{ entry.title }}
+                </h1>
+                <p class ="meta"> {{entry.created}}</p>
+                {{entry.body|markdown }}
+            </div>
+        </article>
+	<footer>
+		<div class="wrapper">
+		</div>
+	</footer>
+
+</body>
+</html>

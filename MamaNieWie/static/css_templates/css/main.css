@@ -164,6 +164,7 @@ ul.main_nav li a:hover{
 
 .main a.read_more,
 .main2 a.read_more{
+	white-space: pre;
 	font-family: 'LatoRegular', 'Helvetica', arial;
 	display: inline-block;
 	padding: 10px 30px 13px 30px;

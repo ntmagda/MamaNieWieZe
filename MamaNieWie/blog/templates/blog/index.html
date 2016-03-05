@@ -5,11 +5,39 @@
 	{% load staticfiles %}
 	<title>Mama nie wie, że się wspinam</title>
 	<meta charset="utf-8">
-	<meta name="author" content="ntmagda">
+	<!--<meta name="author" content="ntmagda">-->
 	<!--<link rel="stylesheet" type="text/css" href="{% static 'css_templates/css/reset.css' %}">-->
 	<!--<link rel="stylesheet" type="text/css" href="{% static 'css_templates/css/main.css' %}">-->
+
+	<!--<link rel="stylesheet" href="static/flexslider/flexslider.css" type="text/css">-->
+	<!--<script src="{% static 'flexslider/jquery.flexslider.js' %}"></script>-->
+	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>-->
+
+	<!--<script type="text/javascript" charset="utf-8">-->
+	  <!--$(window).load(function() {-->
+		<!--$('.flexslider').flexslider();-->
+	  <!--});-->
+	<!--</script>-->
 </head>
 <body>
+
+		<!--<div class = "flexslider">-->
+			<!--<ul class="slides">-->
+			<!--<li>-->
+			  <!--<img src="{% static 'flexslider/images/pic1.jpg' %}" />-->
+				<!--<div class="caption">Caption Here.</div>-->
+			<!--</li>-->
+			<!--<li>-->
+			  <!--<img src="{% static 'flexslider/images/pic2.jpg' %}" />-->
+				<!--<div class="caption">Caption Here.</div>-->
+			<!--</li>-->
+			<!--<li>-->
+			  <!--<img src="{% static 'flexslider/images/pic3.jpg' %}" />-->
+				<!--<div class="caption">Caption Here.</div>-->
+			<!--</li>-->
+		  <!--</ul>-->
+		<!--</div>-->
+
 	<header>
 		<!--<div class="logo">-->
 			<!--<img src= "{% static 'css_templates/img/mountain.jpg' %}" class="mountain" alt="mountain" title="">-->
@@ -25,7 +53,7 @@
 				</ul>
 			</nav>
 		</div>
-	</header><!-- Header End -->
+	</header>
 
 	<section class="main2 wrapper">
 		<section class="content">
@@ -33,7 +61,7 @@
 			<article>
 				<div class="article_image">
 					<a href="#">
-						<!--<img src="{% static 'css_templates/img/pic4.jpg' %}" alt="" title="">-->
+						<img src="{% static object.title_image %}" alt="" title="">
 					</a>
 				</div>
 				<div class="post">
@@ -41,8 +69,8 @@
 						<a href="#">{{ object.title }}</a>
 					</h1>
 					<p class ="meta"> {{object.created}}</p>
-					{{object.body|markdown }}
-					<a class="read_more" href="#">Continue Reading <i class="read_more_arrow"></i> </a>
+					{{object.body|markdown|truncatewords:50 }}
+					<a class="read_more" href="{% url 'blog:readmore' object.slug %}">Continue Reading <i class="read_more_arrow"></i> </a>
 				</div>
 			</article>
 			{% endfor %}
@@ -53,7 +81,7 @@
 				<h3 class="widget-title">About Blogin.</h3>
 				<div class="textwidget">
 					<p>Duis aute irure dolor in rhenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-					<p>Excepteur sint occaecat sunt in culpa qui officia deserunt mollit anim id est laborum.</p>	
+					<p>Excepteur sint occaecat sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</div>
 			</section>
 
@@ -80,7 +108,7 @@
 	<footer>
 		<div class="wrapper">
 		</div>
-	</footer><!-- Footer End -->
+	</footer>
 
 </body>
 </html>
