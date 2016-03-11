@@ -25,4 +25,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
-r'^public/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}
+r'^public/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}
