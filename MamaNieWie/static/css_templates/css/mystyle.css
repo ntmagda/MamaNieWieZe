@@ -1,22 +1,8 @@
 header {
     width: 100%;
-    /*padding-bottom: 15%;*/
-	/*height: 300px;*/
     margin-bottom: 30px;
     text-align: center;
 }
-
-header div.blog_logo{
-    height: 300px;
-    position: relative;
-    background-size: contain; /* obrazek zawsze pokryje caly container */
-    background-color: #ffffff;
-    background-image: url("climb5.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    vertical-align: bottom;
-}
-
 .blog_title {
     font-family: 'Impact', 'Charcoal', sans-serif;
     font-size: 80px;
@@ -27,13 +13,10 @@ header div.blog_logo{
 }
 
 body {
-    background-image: url("droga.jpg");
+    background-image: url("road.jpg");
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background-size: 100% 100%;
     text-align: center;
 }
 
@@ -70,11 +53,42 @@ ul.main_nav li a:hover{
 	background: #5c5c54;
 }
 
+.slide {
+    position: relative;
+    color: white;
+    font-family: 'LatoBold', 'Helvetica', arial;
+    margin: 0;
+}
+
+.slide span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #949293;
+    opacity: 0.8
+}
+
+.slide p {
+    margin: 10px 10px 10px 10px;
+    font-size: 18px;
+    text-align: left;
+
+}
+
+.slide span h1 {
+    text-transform: uppercase;
+    color: white;
+    text-size: 24px;
+}
+
 .wrapper{
-	width: 978px;
+	width: 1800px;
 	height: auto;
 	margin: 0 auto;
 }
+
+
+
 
 /*MAIN*/
 .main{
@@ -96,16 +110,13 @@ ul.main_nav li a:hover{
 	float: left;
 }
 
-div.article_image{
-	width: 470px;
-	margin-right: 40px;
-}
 
 /*SLIDER*/
 div.post {
     background-color: #333;
     height: auto;
 }
+
 div.post h1.title {
 
     font-family: 'LatoBold', 'Helvetica', arial;
@@ -114,26 +125,9 @@ div.post h1.title {
     text-transform: uppercase;
     line-height: 30px;
     text-align: center;
+
 }
 
-
-div.post .title a{
-	text-decoration: none;
-	color: white;
-}
-
-div.post .title a:hover{
-	color: #005ce6;
-}
-
-div.post p{
-    margin-left: 15px;
-	font-family: 'LatoRegular', 'Helvetica', arial;
-	font-size: 16px;
-	color: white;
-	line-height: 20px;
-	margin-bottom: 20px;
-}
 
 div.post a.read_more {
 	white-space: pre;
@@ -146,56 +140,6 @@ div.post a.read_more {
 	text-decoration: none;
 	margin-top: 14px;
     float: right;
-}
-
-
-.flexslider {
-    margin: 0 auto 25px auto;
-    padding: 0;
-    /*width: 1004px;*/
-    /*height: auto;*/
-    line-height: normal;
-
-}
-
-.flexslider .slides img {
-    width: 1004px;
-    height: 600px;
-    display: block;
-}
-
-.flex-item {
-    position: relative;
-}
-
-.flex-caption {
-    width: 260px;
-    padding: 10px 20px 20px 20px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    background-color: rgba(0,0,0,.4);
-    color: #eeeeee;
-    font-size: 20px;
-    line-height: 20px;
-
-}
-
-.flex-title {
-    font-size: 30px;
-    font-weight: 700;
-    color: #eeeeee;
-    line-height: 30px;
-}
-
-.flex-caption a {
-    text-decoration: none;
-    color: #eeeeee;
-}
-
-.flex-title a {
-    text-decoration: none;
-    color: #eeeeee;
 }
 
 object {
@@ -255,7 +199,7 @@ object {
 
 .previous:hover,
 .next:hover{
-	color: #005ce6;
+	color: #fffdf8;
 }
 .previous:hover i,
 .next:hover i{

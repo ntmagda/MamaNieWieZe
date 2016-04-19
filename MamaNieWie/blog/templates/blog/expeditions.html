@@ -1,10 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+{% load django_markdown %}
 <head>
+    {% load staticfiles %}
     <meta charset="UTF-8">
     <title>Expeditions</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css_templates/css/mystyle1.css' %}">
 </head>
 <body>
+<div class="blog_title">
+		Mama nie wie, że sie wspinam
+	</div>
+	<header>
+			<nav>
+				<ul class="main_nav">
+                    <li><a href="{% url 'blog:home' 		%}">Home</a></li>
+					<li><a href="{% url 'blog:aboutus' 		%}">O nas</a></li>
+					<li><a href="{% url 'blog:expeditions' 	%}">Wyprawy</a></li>
+					<li><a href="{% url 'blog:video' 		%}">Filmy</a></li>
+					<li><a href="{% url 'blog:contact' 		%}">Kontakt</a></li>
+				</ul>
+			</nav>
+			<!--<div class = "blog_logo">-->
+			<!--</div>-->
+
+	</header>
+
+
+{% for object in object_list %}
+<article>
+    <div class="article_image">
+            <a href="#">
+                <img src="{% static object.title_image %}" alt="" title="">
+            </a>
+    </div>
+    <div class="post">
+        <h1 class="title">
+            <a href="#">{{ object.title }}</a>
+        </h1>
+        <p class ="meta"> {{object.created}}</p>
+        {{object.body|markdown|truncatewords:50 }}
+        <a class="read_more" href="{% url 'blog:readmore' object.slug %}">Continue Reading <i class="read_more_arrow"></i> </a>
+    </div>
+</article>
+{% endfor %}
+
 
 </body>
 </html>

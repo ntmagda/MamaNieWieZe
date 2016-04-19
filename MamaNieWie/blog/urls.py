@@ -7,7 +7,8 @@ from . import views
 app_name = 'blog'
 urlpatterns = [
     url(r'^$', views.BlogIndex.as_view(), name='index'),
-    url(r'^aboutus/$', views.ExpeditionsView.as_view(), name='aboutus'),
+    url(r'^home/$', views.BlogIndex.as_view(), name='home'),
+    url(r'^aboutus/$', views.AboutUs.as_view(), name='aboutus'),
     url(r'^expeditions/$', views.ExpeditionsView.as_view(), name='expeditions'),
     url(r'^gallery/$', views.VideoView.as_view(), name='video'),
     url(r'^contact/$', views.ContactView.as_view(), name='contact'),
