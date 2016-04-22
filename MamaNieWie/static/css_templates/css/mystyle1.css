@@ -26,6 +26,7 @@ body {
     text-align: center;
 }
 
+
 .main_nav{
     font-family: 'LatoBold', 'Helvetica', arial;
     border:1px solid #ccc;
@@ -60,4 +61,31 @@ body {
 	background: #5c5c54;
 }
 
+/*#popups {*/
+    /*position: relative;*/
+/*}*/
+[id^=popup] {
+    display: none;
+    position:absolute;
+    font-size: 40px;
+    text-transform: uppercase;
+}
 
+/* css dla tytulu w podgladzie po najechaniu na pinezke*/
+[id^=pop_title_] {
+    position: absolute;
+    margin: 10% 10% 10% 10%;
+    background: rgba(0,0,0, 0.5);
+    color: white;
+}
+
+[id^=popup] img {
+    position: absolute;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+.testuj {
+    font-size: 300px;
+    font-color:red;
+}

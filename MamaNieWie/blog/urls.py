@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^expeditions/$', views.ExpeditionsView.as_view(), name='expeditions'),
     url(r'^gallery/$', views.VideoView.as_view(), name='video'),
     url(r'^contact/$', views.ContactView.as_view(), name='contact'),
+    url(r'^posts/(?P<slug>[-\w]+)/$', views.PostView.as_view(), name='post'),
     url(r'^article/(?P<entry_slug>[-\w]+)/$', views.readmore, name='readmore'),
     url(r'^public/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
 ]

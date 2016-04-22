@@ -7,27 +7,8 @@
 	<meta charset="utf-8">
 	<meta name="author" content="ntmagda">
 	<link rel="stylesheet" type="text/css" href="{% static 'css_templates/css/mystyle1.css' %}">
-
     <!-- jQuery library (served from Google) -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!-- bxSlider Javascript file -->
-    <script src="{% static 'carousel/jquery.bxslider.min.js' %}"></script>
-	<script src="{% static 'js/click_on_pin.js' %}"></script>
-    <!-- bxSlider CSS file -->
-    <link href="{% static 'carousel/jquery.bxslider.css' %}" rel="stylesheet" />
-
-	<script type="text/javascript" charset="utf-8">
-
-    $(document).ready(function(){
-        $('.bxslider').bxSlider({
-          minSlides: 2,
-          maxSlides: 2,
-          slideWidth: 900,
-          slideMargin: 0,
-          adaptiveHeight: true,
-    });
-    });
-    </script>
 </head>
 <body>
 	<div class="blog_title">
@@ -43,82 +24,12 @@
 					<li><a href="{% url 'blog:contact' 		%}">Kontakt</a></li>
 				</ul>
 			</nav>
-			<!--<div class = "blog_logo">-->
-			<!--</div>-->
-
 	</header>
 
-     <!--<ul class="bxslider">-->
-				  <!--{% for object in object_list %}-->
-					<!--<li>-->
-                        <!--<div class = "slide">-->
-                           <!--<img src="{% static object.title_image %}">-->
-                           <!--<span class = "part_of_post">-->
-                               <!--<h1 class="title">-->
-                                    <!--{{ object.title }}-->
-                               <!--</h1>-->
-                               <!--<p class = "article_text">-->
-                                <!--&lt;!&ndash;<p class ="meta"> {{object.created}}</p>&ndash;&gt;-->
-                                <!--{{object.body|markdown|truncatewords:50 }}-->
-                               <!--</p>-->
-                            <!--</span>-->
-                            <!--&lt;!&ndash;<a class="read_more" href="{% url 'blog:readmore' object.slug %}">Continue Reading <i class="read_more_arrow"></i> </a>&ndash;&gt;-->
-                        <!--</div>-->
-					<!--</li>-->
-				  <!--{% endfor %}-->
-			  <!--</ul>-->
+
 	<section class="main wrapper">
 
 		<img class="svg" src="{% static 'map/map1.svg' %}">
-
-		<!--<section class="content">-->
-			<!--{% for object in object_list %}-->
-			<!--<article>-->
-				<!--<div class="article_image">-->
-						<!--<a href="#">-->
-							<!--<img src="{% static object.title_image %}" alt="" title="">-->
-						<!--</a>-->
-				<!--</div>-->
-				<!--<div class="post">-->
-					<!--<h1 class="title">-->
-						<!--<a href="#">{{ object.title }}</a>-->
-					<!--</h1>-->
-					<!--<p class ="meta"> {{object.created}}</p>-->
-					<!--{{object.body|markdown|truncatewords:50 }}-->
-					<!--<a class="read_more" href="{% url 'blog:readmore' object.slug %}">Continue Reading <i class="read_more_arrow"></i> </a>-->
-				<!--</div>-->
-			<!--</article>-->
-			<!--{% endfor %}-->
-
-		<!--</section>&lt;!&ndash; Content End &ndash;&gt;-->
-		<!--<aside class="sidebar">-->
-			<!--<section class="widget">-->
-				<!--<h3 class="widget-title">About Blogin.</h3>-->
-				<!--<div class="textwidget">-->
-					<!--<p>Duis aute irure dolor in rhenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>-->
-					<!--<p>Excepteur sint occaecat sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
-				<!--</div>-->
-			<!--</section>-->
-
-			<!--<section class="widget">-->
-				<!--<h3 class="widget-title">Search.</h3>-->
-				<!--<form class="search_widget">-->
-					<!--<input type="text" id="search-field" class="search-field" placeholder="What are you looking for?"/>-->
-				<!--</form>-->
-			<!--</section>-->
-
-			<!--<section class="widget">-->
-				<!--<a href="#">-->
-					<!--&lt;!&ndash;<img src="{% static 'css_templates/img/ads.jpg' %}" alt="" title="">&ndash;&gt;-->
-				<!--</a>-->
-			<!--</section>-->
-		<!--</aside>&lt;!&ndash; aside(sidebar) End &ndash;&gt;-->
-
-		<!--<nav class="pagination">-->
-			<!--<a href="#" class="previous"><i></i>Previous</a>-->
-			<!--<a href="#" class="next">Next<i></i></a>-->
-		<!--</nav>&lt;!&ndash; pagination End &ndash;&gt;-->
-
 
 	<footer>
 		<div class="wrapper">
@@ -126,7 +37,23 @@
 	</footer>
 	</section>
 
+	<!--<div id="popups">-->
+		<div class = "testuj">
+			Cokolwiek
+		</div>
+	<!--</div>-->
 
+	<script>
+		var pin_slugs = [];
+        var pin_thumbnails = [];
+		{% for object in object_list %}
+			pin_slugs.push( "{{ object.slug }}" );
+            pin_thumbnails.push("{{ object.title_image }}")
+		{% endfor %}
+
+	</script>
+	<script src="{% static 'js/create_pin_divs.js' %}"></script>
+	<script src="{% static 'js/click_on_pin.js' %}"></script>
 
 </body>
 </html>
